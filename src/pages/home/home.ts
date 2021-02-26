@@ -7,8 +7,29 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+ tiendas_list = [{
+   logo: 'https://www.pixelero.com.mx/wp-content/uploads/2013/04/chedraui.png',
+   name: 'Chedraui'
+ },
+ {
+  logo: 'https://www.pixelero.com.mx/wp-content/uploads/2013/04/chedraui.png',
+  name: 'Cinepolis'
+},
+{
+  logo: 'https://www.pixelero.com.mx/wp-content/uploads/2013/04/chedraui.png',
+  name: 'Chonita'
+},
+{
+  logo: 'https://www.pixelero.com.mx/wp-content/uploads/2013/04/chedraui.png',
+  name: 'Don Pollo'
+},
+{
+  logo: 'https://www.pixelero.com.mx/wp-content/uploads/2013/04/chedraui.png',
+  name: 'Aurrera'
+},
+];
 
+  constructor(public navCtrl: NavController) {
   }
 
 }
