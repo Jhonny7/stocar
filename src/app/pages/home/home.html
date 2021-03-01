@@ -7,12 +7,36 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor='let tienda of tiendas_list'>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+   
+    <ion-item >
+     
+  
+      <ion-thumbnail item-start>
+        <img src={{tienda.logo}}>
+      </ion-thumbnail>
+      <h2>{{tienda.name}}</h2>
+     
+    </ion-item>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <ion-item-options side="right">
+      <button ion-button color="danger">
+        <ion-icon name="trash-outline"></ion-icon>
+        Eliminar
+      </button>
+      <button ion-button color="secondary">
+        <ion-icon name="create-outline"></ion-icon>
+        Editar
+      </button>
+    </ion-item-options>
+
+  </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab (click)='newCard()' ><ion-icon name="add" style="font-size: 35px;"></ion-icon></button>
+  </ion-fab>
 </ion-content>
