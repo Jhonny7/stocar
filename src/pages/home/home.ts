@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
+import { ModalCrearTarjetaPage } from '../modal-crear-tarjeta/modal-crear-tarjeta';
 
 @Component({
   selector: 'page-home',
@@ -29,7 +30,21 @@ export class HomePage {
 },
 ];
 
-  constructor(public navCtrl: NavController) {
+  constructor(
+    public navCtrl: NavController,
+    public modalCtrl: ModalController,
+    ) {
+  }
+
+  newCard(){
+    console.log('crear tarjeta');
+    let modalNewCard = this.modalCtrl.create(ModalCrearTarjetaPage);
+    modalNewCard.present();
+    
+    modalNewCard.onDidDismiss((data)=>{
+      console.log(data);
+      
+    })
   }
 
 }
