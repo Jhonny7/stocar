@@ -1,5 +1,21 @@
 /*Imports*/
 @import "../assets/css/animations.scss";
+
+/*Fuente de la app*/
+ion-app.md {
+  font-family: 'Robot' !important;
+  font-weight: 100 !important;
+}
+@font-face {
+  font-family: KGRedHands;
+  src: url("../assets/fts/KGRedHands.ttf");
+}
+
+@font-face {
+  font-family: Robot;
+  src: url("../assets/fts/Roboto-Regular.ttf");
+}
+//
 //header sin background bottom
 .header-md::after,
 .tabs-md[tabsPlacement="top"] > .tabbar::after,

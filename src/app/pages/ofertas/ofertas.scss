@@ -5,4 +5,16 @@ page-ofertas {
     height: 50%;
     border: none;
   }
+
+  .sin-oferta {
+    padding: 30px;
+    div {
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      img {
+        width: 70%;
+      }
+    }
+  }
 }
