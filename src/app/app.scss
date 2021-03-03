@@ -1,19 +1,42 @@
-// http://ionicframework.com/docs/theming/
+/*Imports*/
+@import "../assets/css/animations.scss";
+//header sin background bottom
+.header-md::after,
+.tabs-md[tabsPlacement="top"] > .tabbar::after,
+.footer-md::before,
+.tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+  background-image: none;
+}
 
+//Evita mostrar errores y que el flujo de la app siga
+#ion-diagnostics {
+  display: none;
+}
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
-.header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
-    background-image: none;
+//Animaciones en tabs
+.tabs-ios .tab-button:hover:not(.disable-hover),
+.tabs-ios .tab-button[aria-selected="true"] {
+  color: #fff !important;
+  font-size: 12px;
+  -webkit-transition: all 0.3s ease;
+  border: 1px solid #62c1e8;
+  border-bottom: 4px solid #32a1d0;
+}
+.tabs-md .tab-button:hover:not(.disable-hover),
+.tabs-md .tab-button[aria-selected="true"] {
+  color: #fff !important;
+  font-size: 12px;
+  -webkit-transition: all 0.3s ease;
+  border: 1px solid #62c1e8;
+  border-bottom: 4px solid #32a1d0;
+}
+
+//Animacion refresher
+.refresher-pulling-icon,
+.refresher-refreshing-icon {
+  text-align: center;
+  transform-origin: center;
+  font-size: 30px;
+  color: map-get($colors, loader) !important;
+  transition: 200ms;
 }

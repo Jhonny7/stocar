@@ -1,3 +1,4 @@
+import { HeaderColor } from '@ionic-native/header-color';
 import { GenericService } from './services/generic.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -12,7 +13,8 @@ import { ValidationService } from './services/validation.service';
     GenericService,
     LoadingService,
     LocalStorageEncryptService,
-    ValidationService
+    ValidationService,
+    HeaderColor
   ]
 })
 export class ProvidersModule {}

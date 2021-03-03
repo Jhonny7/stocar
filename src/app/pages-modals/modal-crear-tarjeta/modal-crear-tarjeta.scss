@@ -1,23 +1,23 @@
 page-modal-crear-tarjeta {
-.header_newCard{
+  .header_newCard {
     display: block;
-    ion-icon{
-        font-size: 2em;
-        padding-left: 1rem;
-        display: inline-block;
-    width: 10%;
+    ion-icon {
+      font-size: 2em;
+      padding-left: 1rem;
+      display: inline-block;
+      width: 10%;
     }
-    .search_container{
-        display: inline-block;
-    width: 89%;
+    .search_container {
+      display: inline-block;
+      width: 89%;
+    }
+    .search_input {
+      font-size: 25px;
+      border: none;
+      background: transparent;
+      padding-left: 20px;
+      display: inline-block;
+      width: 88%;
+    }
+  }
 }
-        .search_input{
-            font-size: 25px;
-    border: none;
-    background: transparent;
-    padding-left: 20px;
-    display: inline-block;
-    width: 88%;
-        }
-    }
-    }

@@ -1,0 +1,16 @@
+<ion-header style="height: 44px;" class="animated fadeInRight">
+  <ion-navbar color="{{genericService.getColorPrimary()}}" >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{title | translate}}</ion-title>
+
+    <ion-buttons end>
+  
+        <button ion-button icon-only (click)="verOpciones()">
+          <ion-icon name="md-more" style="font-size: 2.4rem;"></ion-icon>
+        </button>
+  
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>

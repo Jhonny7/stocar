@@ -8,10 +8,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from './pages/home/home';
 import { ListPage } from './pages/list/list';
+import { TabsPage } from './pages/tabs/tabs';
 import { TranslateModule,TranslateLoader } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ModalCrearTarjetaPage } from './pages-modals/modal-crear-tarjeta/modal-crear-tarjeta';
+import { OfertasPage } from './pages/ofertas/ofertas';
+import { HeaderComponent } from './components/header/header';
+import { OpcionesMenuPage } from './pages/opciones-menu/opciones-menu';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -21,7 +25,11 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     HomePage,
     ListPage,
-    ModalCrearTarjetaPage
+    ModalCrearTarjetaPage,
+    TabsPage,
+    OfertasPage,
+    HeaderComponent,
+    OpcionesMenuPage
   ],
   imports:[
     IonicModule.forRoot(HomePage),
@@ -37,11 +45,17 @@ export function createTranslateLoader(http: HttpClient) {
   entryComponents: [
     HomePage,
     ListPage,
-    ModalCrearTarjetaPage
+    ModalCrearTarjetaPage,
+    TabsPage,
+    OfertasPage,
+    OpcionesMenuPage
   ],
   exports:[
     HomePage,
-    ListPage
+    ListPage,
+    TabsPage,
+    OfertasPage,
+    HeaderComponent
   ]
 })
 export class ComponentsModule {}

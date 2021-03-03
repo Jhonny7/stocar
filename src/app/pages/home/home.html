@@ -1,42 +1,30 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>{{'HELLO' | translate}}</ion-title>
-  </ion-navbar>
-</ion-header>
+<header [title]="'HELLO'"></header>
 
 <ion-content>
-  <ion-list>
-    <ion-item-sliding *ngFor='let tienda of tiendas_list'>
+  <ion-list class="animated fadeInUp">
+    <ion-item-sliding *ngFor="let tienda of tiendas_list">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="{{ tienda.logo }}" />
+        </ion-thumbnail>
+        <h2>{{ tienda.name }}</h2>
+      </ion-item>
 
-   
-    <ion-item >
-     
-  
-      <ion-thumbnail item-start>
-        <img src={{tienda.logo}}>
-      </ion-thumbnail>
-      <h2>{{tienda.name}}</h2>
-     
-    </ion-item>
-
-    <ion-item-options side="right">
-      <button ion-button color="danger">
-        <ion-icon name="trash-outline"></ion-icon>
-        Eliminar
-      </button>
-      <button ion-button color="secondary">
-        <ion-icon name="create-outline"></ion-icon>
-        Editar
-      </button>
-    </ion-item-options>
-
-  </ion-item-sliding>
+      <ion-item-options side="right">
+        <button ion-button color="danger">
+          <ion-icon name="trash-outline"></ion-icon>
+          Eliminar
+        </button>
+        <button ion-button color="secondary">
+          <ion-icon name="create-outline"></ion-icon>
+          Editar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
-
-  <ion-fab bottom right>
-    <button ion-fab (click)='newCard()' ><ion-icon name="add" style="font-size: 35px;"></ion-icon></button>
-  </ion-fab>
 </ion-content>
+<ion-fab bottom right>
+  <button ion-fab (click)="newCard()" color="{{genericService.getColorPrimary()}}">
+    <ion-icon name="ios-add-outline" style="font-size: 35px;"></ion-icon>
+  </button>
+</ion-fab>

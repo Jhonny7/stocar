@@ -1,3 +1,4 @@
+import { LocalStorageEncryptService } from './services/local-storage-encrypt.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
@@ -5,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from './pages/home/home';
 import { ListPage } from './pages/list/list';
+import { TabsPage } from './pages/tabs/tabs';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,7 +14,7 @@ import { ListPage } from './pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = TabsPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -20,7 +22,8 @@ export class MyApp {
     public platform: Platform, 
     public statusBar: StatusBar, 
     public splashScreen: SplashScreen,
-    private translateService: TranslateService) {
+    private translateService: TranslateService,
+    private localStorageEncryptService: LocalStorageEncryptService) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -39,6 +42,7 @@ export class MyApp {
       this.splashScreen.hide();
 
       this.initializeLanguage();
+      this.initializeTheme();
     });
   }
 
@@ -60,6 +64,14 @@ export class MyApp {
       localStorage.setItem("language", "es");
       this.translateService.setDefaultLang("es");
       this.translateService.use("es");
+    }
+  }
+
+  initializeTheme(){
+    if(!this.localStorageEncryptService.getFromLocalStorage("theme")){
+      this.localStorageEncryptService.setToLocalStorage("theme", "#71cef5");
+      this.localStorageEncryptService.setToLocalStorage("primary", "primary");
+      //this.headerColor.tint("#F07C1B");
     }
   }
 }

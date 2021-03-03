@@ -93,11 +93,9 @@ export class GenericService {
     }
 
     //For themes
-    getColor(){
-        let color:any = this.localStorageEncryptService.getFromLocalStorage("theme");
-        let retornar:any = color == '#3b64c0' ? 'primary' : color == '#be3b3b' ? 'primary2' : color == '#3bb8be' ? 'primary3' : color == '#292929' ? 'primary5' : color == '#F07C1B' ? 'primary6' : 'primary4';
-        
-        return retornar;
+    getColorPrimary(){
+        let color:any = this.localStorageEncryptService.getFromLocalStorage("primary");
+        return color;
     }
 
     getColorHex(){
@@ -108,14 +106,14 @@ export class GenericService {
 
     getColorClass(){
         let color:any = this.localStorageEncryptService.getFromLocalStorage("theme");
-        let retornar:any = color == '#3b64c0' ? 'alerta-loteria' : color == '#be3b3b' ? 'alerta-loteria2' : color == '#3bb8be' ? 'alerta-loteria3' : color == '#292929' ? 'alerta-loteria5' : color == '#F07C1B' ? 'alerta-loteria6' : 'alerta-loteria4';
+        let retornar:any = color == '#3b64c0' ? 'alerta-loteria' : color == '#be3b3b' ? 'alerta-loteria2' : color == '#3bb8be' ? 'alerta-loteria3' : color == '#292929' ? 'alerta-loteria5' : color == '#71cef5' ? 'alerta-loteria6' : 'alerta-loteria4';
       
         return retornar;
     }
 
     getColorClassTWO(){
         let color:any = this.localStorageEncryptService.getFromLocalStorage("theme");
-        let retornar:any = color == '#3b64c0' ? 'alerta-two-button' : color == '#be3b3b' ? 'alerta-two-button2' : color == '#3bb8be' ? 'alerta-two-button3' : color == '#292929' ? 'alerta-two-button5' : color == '#F07C1B' ? 'alerta-two-button6' : 'alerta-two-button4';
+        let retornar:any = color == '#3b64c0' ? 'alerta-two-button' : color == '#be3b3b' ? 'alerta-two-button2' : color == '#3bb8be' ? 'alerta-two-button3' : color == '#292929' ? 'alerta-two-button5' : color == '#71cef5' ? 'alerta-two-button6' : 'alerta-two-button4';
         
         return retornar;
     }

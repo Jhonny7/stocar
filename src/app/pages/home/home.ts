@@ -1,3 +1,4 @@
+import { GenericService } from './../../services/generic.service';
 import { Component } from "@angular/core";
 import { NavController, ModalController } from "ionic-angular";
 import { ModalCrearTarjetaPage } from "../../pages-modals/modal-crear-tarjeta/modal-crear-tarjeta";
@@ -37,7 +38,8 @@ export class HomePage {
 
   constructor(
     public navCtrl: NavController,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    private genericService: GenericService
   ) {}
 
   newCard() {

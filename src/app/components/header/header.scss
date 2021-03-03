@@ -1,0 +1,42 @@
+header {
+  .toolbar {
+    min-height: 44px;
+  }
+
+  ion-title {
+    left: 0;
+    top: 0;
+    padding: 0 90px 1px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    pointer-events: none;
+  }
+
+  .toolbar-title-md {
+    padding: 0px;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #000;
+    pointer-events: auto;
+  }
+}
+ion-content{
+    margin-top: 44px;
+}
+ion-fab[bottom] {
+    bottom: 65px;
+}
+.clase-Pop {
+    .popover-wrapper {
+      .popover-content {
+        top: 43px !important;
+        right: 15px !important;
+        left: auto !important;
+        width: 220px !important;
+      }
+    }
+  }
