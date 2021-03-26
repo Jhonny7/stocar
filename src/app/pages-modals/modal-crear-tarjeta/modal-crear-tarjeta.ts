@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { GenericService } from '../../services/generic.service';
 
 /**
  * Generated class for the ModalCrearTarjetaPage page.
@@ -14,30 +15,23 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
   templateUrl: 'modal-crear-tarjeta.html',
 })
 export class ModalCrearTarjetaPage {
+  texto:any;
+  searchQuery: string = '';
+  tiendas_list = [];
+  
 
-  tiendas_list = [{
-    logo: 'https://www.pixelero.com.mx/wp-content/uploads/2013/04/chedraui.png',
-    name: 'Chedraui'
-  },
-  {
-   logo: 'https://www.pixelero.com.mx/wp-content/uploads/2013/04/chedraui.png',
-   name: 'Cinepolis'
- },
- {
-   logo: 'https://www.pixelero.com.mx/wp-content/uploads/2013/04/chedraui.png',
-   name: 'Chonita'
- },
- {
-   logo: 'https://www.pixelero.com.mx/wp-content/uploads/2013/04/chedraui.png',
-   name: 'Don Pollo'
- },
- {
-   logo: 'https://www.pixelero.com.mx/wp-content/uploads/2013/04/chedraui.png',
-   name: 'Aurrera'
- },
- ];
+  showTiendas(){
+    let url = '../../../assets/getTiendas.json';
+   this.genericService.sendGetRequest(url).subscribe(data => {
+     this.tiendas_list = data;
+     
+   })
+   console.log('holas');
+   
+  }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public genericService: GenericService) {
+    this.showTiendas()
   }
 
   ionViewDidLoad() {
@@ -49,14 +43,22 @@ export class ModalCrearTarjetaPage {
     this.viewCtrl.dismiss({result: cerrar})
   }
 
-  getTiendas(event){
-    let val = event.target.value;
+  getTiendas(ev){
+      // Reset items back to all of the items
+     
+      this.showTiendas();
 
-    // if the value is an empty string don't filter the items
+    // set val to the value of the searchbar
+    const val = ev.target.value;
+
+   setTimeout(() => {
     if (val && val.trim() != '') {
       this.tiendas_list = this.tiendas_list.filter((item) => {
+        
         return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+   }, 10);
+    
   }
   }

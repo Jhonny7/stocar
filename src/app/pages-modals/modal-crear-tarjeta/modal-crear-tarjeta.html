@@ -6,23 +6,35 @@
 -->
 <ion-header>
   <ion-navbar class="header_newCard">
-      <ion-icon class="closeIcon" (click)='closeModal()' ios="ios-close" md="md-close"></ion-icon>
+      
 
       <div class="search_container">
         <div style="display: block; width: 100%;padding-left: 15%; padding: 9px;">
           <ion-icon style="color: gray; display: inline-block; width: 10%;" ios="ios-search" md="md-search"></ion-icon>
-          <input class="search_input" type="text" placeholder="Buscar...">
+          <input (keyup)="getTiendas($event)" class="search_input" type="text" placeholder="Buscar...">
         </div>
       </div>
+      <ion-icon showWhen="android" class="closeIcon" (click)='closeModal()' md="md-close" color="{{genericService.getColorPrimary()}}"  ></ion-icon>
+      <button showWhen='ios' ion-button color="light" clear>Cancel</button>
    
   </ion-navbar>
+
+  <div class="nav_new_card">
+    <div style="display: inline-block; width: 25%;">
+      <button class="btn_new_card" ion-fab color="{{genericService.getColorPrimary()}}">
+        <ion-icon name="ios-add-outline" style="font-size: 35px !important;"></ion-icon>
+      </button>
+    </div>
+    <p style="display: inline-block;
+    width: 70%;
+    vertical-align: bottom;
+    font-size: 13px;">LA TARJETA NO ESTA EN LA LISTA</p>
+  </div>
 </ion-header>
 
 <ion-content>
+ 
   <ion-list *ngFor='let tienda of tiendas_list'>
-    <ion-list-header>
-      Action
-    </ion-list-header>
     <ion-item >
       <ion-thumbnail item-start>
         <img src={{tienda.logo}}>
